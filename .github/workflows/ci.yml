@@ -297,3 +297,6 @@ jobs:
           GIT_CONFIG_KEY_0: commit.gpgsign
           GIT_CONFIG_VALUE_0: "false"
         run: bun run test
+
+      - name: Test pstack skill scripts
+        run: node --test skills/*/scripts/test/*.test.mjs
