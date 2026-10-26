@@ -1,8 +1,8 @@
 # pstack
 
-Antigravity (`agy`) port of [pstack](https://github.com/cursor/plugins/tree/e73df471cd4bd918367e99f3dd9c51bd53ddf5f0/pstack) (`0.15.32`) by [Lauren Tan (poteto)](https://x.com/poteto), bundling `deslop`, `control-cli`, and `control-ui` from [cursor-team-kit](https://github.com/cursor/plugins/tree/88d47514b82e7c44f00f2b2a72ff6dd12158038c/cursor-team-kit) (`1.2.0`) by Eric Zakariasson.
+Antigravity (`agy`) port of [pstack](https://github.com/cursor/plugins/tree/e73df471cd4bd918367e99f3dd9c51bd53ddf5f0/pstack) (`0.15.32`) by [Lauren Tan (poteto)](https://x.com/poteto).
 
-See the [upstream pstack README](https://github.com/cursor/plugins/blob/e73df471cd4bd918367e99f3dd9c51bd53ddf5f0/pstack/README.md), [upstream cursor-team-kit README](https://github.com/cursor/plugins/blob/88d47514b82e7c44f00f2b2a72ff6dd12158038c/cursor-team-kit/README.md), and the [guide](./docs/guide/README.md) for usage and documentation.
+See the [upstream pstack README](https://github.com/cursor/plugins/blob/e73df471cd4bd918367e99f3dd9c51bd53ddf5f0/pstack/README.md) and the [guide](./docs/guide/README.md) for usage and documentation.
 
 i'm [poteto](https://x.com/poteto). i'm not a president or ceo, but i've worked with millions of lines of code at Meta, Netflix, and Cursor. i'm also on the react core team where i help build and maintain react compiler.
 
