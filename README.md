@@ -16,7 +16,7 @@ there's a growing sense that ai writes too much slop code. i agree. i don't want
 
 fork it. improve it. make it yours. PRs are welcome! 
 
-## Install
+## install
 
 Install the plugin with the Antigravity CLI:
 
@@ -259,7 +259,8 @@ twenty-four short skills, one principle each. `poteto-mode` indexes them inline 
 
 a few things `poteto-mode` references but doesn't bundle:
 
-- `agy-customizations` is an antigravity built-in. inside `poteto-mode`, pr-status requests go to the [babysit playbook](./skills/poteto-mode/playbooks/babysit.md).
+- `agy-customizations` is an antigravity built-in for authoring skills.
+- inside `poteto-mode`, pr-status requests go to the [babysit playbook](./skills/poteto-mode/playbooks/babysit.md).
 
 ## why are there no planning skills?
 
