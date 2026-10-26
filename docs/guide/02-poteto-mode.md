@@ -104,7 +104,7 @@ A long chat accumulates context from the last task. When you change subjects, sa
 
 ## Isolate parallel work
 
-If you run several agents against one repository on one computer, they will fight over the working tree, the ports, and the build output. Pass `Workspace: "branch"` or `Workspace: "share"` when spawning subagents via `invoke_subagent`, or ask for a worktree up front:
+If you run several agents against one repository on one computer, they will fight over the working tree, the ports, and the build output. Pass `Workspace: "branch"` when spawning subagents via `invoke_subagent`, or ask for a worktree up front:
 
 ```text
 /poteto-mode new task. branch off <base> in a fresh worktree, then port the parser change there.

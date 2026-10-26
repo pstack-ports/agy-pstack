@@ -93,7 +93,7 @@ The contract above drives one task to one finish condition. Some nights hold mor
 
 ## Run many projects in parallel
 
-Give each coordinator agent a dedicated conversation thread. The coordinator doesn't write code. It directs subagents in isolated workspaces (`Workspace: "branch"` or `"share"`). That's the shape the Orchestrate playbook expects. Start your prompts to the coordinator with `/poteto-mode`, and the subagents it spawns follow the playbooks.
+Give each coordinator agent a dedicated conversation thread. The coordinator doesn't write code. It directs subagents in isolated workspaces (`Workspace: "branch"`). That's the shape the Orchestrate playbook expects. Start your prompts to the coordinator with `/poteto-mode`, and the subagents it spawns follow the playbooks.
 
 A few habits help:
 
