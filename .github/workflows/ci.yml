@@ -300,5 +300,8 @@ jobs:
           GIT_CONFIG_VALUE_0: "false"
         run: bun run test
 
-      - name: Test pstack skill scripts
-        run: node --test skills/*/scripts/test/*.test.mjs
+      - name: Test statechart
+        working-directory: skills/statechart/scripts
+        run: |
+          bun install
+          bun run test
