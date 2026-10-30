@@ -62,9 +62,9 @@ jobs:
         run: |
           AGY_HOME="$(mktemp -d)"
           trap 'rm -rf "$AGY_HOME"' EXIT
-          HOME="$AGY_HOME" agy plugin validate .
+          HOME="$AGY_HOME" agy plugin validate --strict .
           HOME="$AGY_HOME" agy plugin install .
-          HOME="$AGY_HOME" agy plugin validate "$AGY_HOME/.gemini/config/plugins/pstack"
+          HOME="$AGY_HOME" agy plugin validate --strict "$AGY_HOME/.gemini/config/plugins/pstack"
           HOME="$AGY_HOME" agy plugin list --json > "$AGY_HOME/plugins.json"
           AGY_PLUGINS_JSON="$AGY_HOME/plugins.json" bun -e '
             import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
@@ -73,12 +73,14 @@ jobs:
             const errors = [];
             const fail = (msg) => errors.push(msg);
 
-            const pluginJson = JSON.parse(readFileSync("plugin.json", "utf8"));
-            const agyPluginJson = JSON.parse(readFileSync(".antigravity-plugin/plugin.json", "utf8"));
+            if (existsSync("plugin.json")) {
+              fail("root plugin.json should not exist alongside .antigravity-plugin/plugin.json");
+            }
+            const pluginJson = JSON.parse(readFileSync(".antigravity-plugin/plugin.json", "utf8"));
 
             const allowedPluginKeys = new Set([
-              "$schema",
               "name",
+              "displayName",
               "version",
               "description",
               "author",
@@ -86,29 +88,24 @@ jobs:
               "repository",
               "license",
               "keywords",
-              "extensions",
+              "logo",
+              "suggestedPrompts",
             ]);
             for (const key of Object.keys(pluginJson)) {
               if (!allowedPluginKeys.has(key)) {
-                fail(`plugin.json contains unsupported key "${key}"`);
+                fail(`.antigravity-plugin/plugin.json contains unsupported key "${key}"`);
               }
             }
-            if (pluginJson.$schema !== "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json") {
-              fail(`plugin.json $schema must be https://agent-plugins.org/schemas/1.0.0/plugin.schema.json`);
-            }
             if (!/^(?!.*(?:--|\.\.))[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$/.test(pluginJson.name ?? "")) {
-              fail(`plugin.json has invalid name "${pluginJson.name}"`);
+              fail(`.antigravity-plugin/plugin.json has invalid name "${pluginJson.name}"`);
             }
             for (const field of ["name", "version", "description"]) {
               if (!pluginJson[field] || typeof pluginJson[field] !== "string") {
-                fail(`plugin.json missing string field "${field}"`);
-              }
-              if (pluginJson[field] !== agyPluginJson[field]) {
-                fail(`Manifest mismatch for "${field}": plugin.json="${pluginJson[field]}" vs .antigravity-plugin/plugin.json="${agyPluginJson[field]}"`);
+                fail(`.antigravity-plugin/plugin.json missing string field "${field}"`);
               }
             }
-            if (!agyPluginJson.logo || !existsSync(agyPluginJson.logo)) {
-              fail(`.antigravity-plugin/plugin.json logo "${agyPluginJson.logo}" does not exist`);
+            if (!pluginJson.logo || !existsSync(pluginJson.logo)) {
+              fail(`.antigravity-plugin/plugin.json logo "${pluginJson.logo}" does not exist`);
             }
 
             const parseFrontmatter = (filePath) => {
