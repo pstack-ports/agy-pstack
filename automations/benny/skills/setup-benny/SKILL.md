@@ -188,7 +188,7 @@ Ask the user to update each existing automation directly. Do not create replacem
 
 ### Creation boundary
 
-Never call a direct automation backend service or backend automation tool. Never use a browser URL that carries draft fields. The Slack automations can't be created in this harness.
+Never call a direct automation backend service or backend automation tool. Never use a browser URL that carries draft fields.
 
 Do not enable either automation until the thread-safety test passes after saving.
 
