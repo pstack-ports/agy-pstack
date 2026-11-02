@@ -70,8 +70,6 @@ if any shared dependency does not resolve, stop and explain what failed. do not 
 
 tell me that `.agents/automations/benny/` and any referenced secret-free configuration must be committed before either automation is enabled. do not create or update an automation until i explicitly ask.
 
-for first-time creation, configure one automation for triage and one for repro and fix. complete the draft review, approval, readiness check, and handoff for the first automation before starting the second.
-
-paraphrase this intent and the finished configuration into each draft. the triage prompt must read and follow `.agents/automations/benny/skills/triage-issue-reports/SKILL.md`. the repro prompt must read and follow `.agents/automations/benny/skills/reproduce-and-fix-issues/SKILL.md`. use these repo-relative paths only after confirming they are committed in the repository where the automation will run.
+the slack automations can't be created in this harness. antigravity has no surface that creates a slack-triggered automation.
 
 for existing automations, validate the configuration, then use the concise field checklist in the copied setup file so i can edit each automation directly. do not create duplicates.
