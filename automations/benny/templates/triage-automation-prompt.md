@@ -1,6 +1,6 @@
 # Triage automation prompt
 
-> Source material for the copied setup workflow. Paraphrase this intent into an automation draft after confirming that the copied pack is committed in the repository where the automation will run.
+> Source material for the copied setup workflow. The Slack automations can't be created in this harness.
 
 Read and follow `.agents/automations/benny/skills/triage-issue-reports/SKILL.md` for this run.
 
