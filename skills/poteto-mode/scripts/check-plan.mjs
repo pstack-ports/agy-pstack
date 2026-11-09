@@ -114,11 +114,8 @@ else {
 		else cursor = at + 1;
 	}
 	const programBody = bodyText(program);
-	if (
-		!programBody.includes("git show origin/main:") &&
-		!programBody.includes("~/.gemini/config/plugins/pstack/")
-	) {
-		fail(program.n, 'Program checklist lacks "git show origin/main:" or "~/.gemini/config/plugins/pstack/"');
+	if (!programBody.includes("~/.gemini/config/plugins/pstack/")) {
+		fail(program.n, 'Program checklist lacks "~/.gemini/config/plugins/pstack/"');
 	}
 	for (const marker of PROGRAM_MARKERS) {
 		if (!programBody.includes(marker)) fail(program.n, `Program checklist lacks "${marker}"`);
