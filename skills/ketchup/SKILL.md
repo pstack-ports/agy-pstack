@@ -34,7 +34,7 @@ For a call between options, give every option the work weighed, each with what i
 
 ## Visuals
 
-A visual is a picture: a screenshot, a video, a Mermaid diagram, a chart or widget from Antigravity's built-in `generative_ui` skill, or a generated image (`image-generator` subagent). A Markdown table is not a visual, even with before and after columns.
+A visual is a picture: a screenshot, a video, a Mermaid diagram, a chart or widget from Antigravity's built-in `generative_ui` skill, or a generated image (`generate_image` tool). A Markdown table is not a visual, even with before and after columns.
 
 When something is easier to grasp as a picture than as sentences, draw it: how a design or system works, a PR stack or dependency chain with each PR's state, a before and after of a fix, or options side by side. Never draw a status list, a list of action items, or boxes with nothing connecting them. Never give a fact twice, in text or across visuals.
 
