@@ -20,7 +20,7 @@ Run:
 
 [`/setup-pstack`](../../skills/setup-pstack/SKILL.md) detects the model tiers you want to use, asks for a reasoning budget, shows you each role (code delegates, judgment, the review panels), and asks what you want. Answer the questions. It writes `~/.gemini/config/rules/pstack-models.md`, a small rule every pstack skill reads.
 
-The defaults are the same as the `large` budget. Code delegates, prose, and judgment use `pro`, and the hardest changes do too. Swarm workers, verification, and trivial edits use `flash`. `unlimited` upgrades `flash` roles to `pro`. `large` keeps that split. `medium` and `small` shift roles toward `flash` and `flash_lite` and spend fewer tokens.
+The defaults are the same as the `large` budget. Code delegates, prose, and judgment use `pro`, and the hardest changes do too. `large` keeps each role's default. `unlimited` raises each role one tier, capped at `pro`. `medium` lowers each role one tier (`pro` to `flash`, `flash` to `flash_lite`, each panel entry too) and `small` lowers each role two tiers. `inherit`, `inherit-parent`, and `auto` stay. `medium` and `small` spend fewer tokens.
 
 You only override what you care about. A role with no line in the rule keeps the skill's default. To restore a default, delete that role's line. A rerun of `/setup-pstack` keeps any role whose model differs from the default. When a default changes, a rule written before the change still pins the old default until you run `/setup-pstack` again. That run replaces the old defaults it recognizes, tells you which, and keeps your other choices. To drop a pin it does not recognize, delete that role's line or the file first.
 

@@ -97,7 +97,7 @@ If a skill directory next to this one is missing from the table, read its frontm
 
 Close calls:
 
-- `/how` explains what the code does, with one read-only subagent. `/why` answers from the record, not the code. `/teach` runs one or both and explains the result plainly.
+- `/how` explains what the code does. `/why` explains the reasons. `/teach` runs one or both and explains the result plainly.
 - `/arena` gives every worker the same brief and merges the best parts. `/swarm` splits work into slices or a race and returns one report.
 - `/architect` implements right after it settles the design. Add "with checkpoint" to review the design before it writes code.
 - `/interrogate` reviews the diff. `/blast-radius` looks for breakage outside the diff and proves the one fact that makes the change safe.
