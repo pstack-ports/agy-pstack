@@ -149,7 +149,7 @@ Each live lane runs in its own isolated workspace at the PR head. Drive through 
 
 ## Appendix D. Links and reading list
 
-<Docs to read before editing. Which PRs get `~/.gemini/config/plugins/pstack/skills/how/SKILL.md` and `~/.gemini/config/plugins/pstack/skills/interrogate/SKILL.md`. The trail per `~/.gemini/config/plugins/pstack/skills/show-me-your-work/SKILL.md`.>
+<Docs to read before editing. Which PRs get `~/.gemini/config/plugins/pstack/skills/interrogate/SKILL.md`. The trail per `~/.gemini/config/plugins/pstack/skills/show-me-your-work/SKILL.md`.>
 ````
 
 **Reply:** the plan path, the PR ids with their dependencies and the review-gated set, what the prototypes proved and what stays unproven, and the check script's output.
