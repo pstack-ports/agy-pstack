@@ -240,6 +240,12 @@ jobs:
               }
             }
             const diskPlaybooks = new Set(readdirSync("skills/poteto-mode/playbooks").filter((f) => f.endsWith(".md")));
+            for (const chunk of playbooksSection.split(/[,\n]/)) {
+              const name = chunk.replace(/^[\s>*-]+/, "").replace(/[.\s]+$/, "").replace(/\*\*/g, "").trim();
+              if (!name || name.length > 60 || name.includes("`")) continue;
+              const file = `${toKebab(name)}.md`;
+              if (diskPlaybooks.has(file)) indexedPlaybooks.add(file);
+            }
             for (const pb of indexedPlaybooks) {
               if (!diskPlaybooks.has(pb)) fail(`skills/poteto-mode/SKILL.md references missing playbook "playbooks/${pb}"`);
             }

@@ -14,7 +14,7 @@ This skill orchestrates three others: an inline mining pass (see step 1), Antigr
 
 ### 0. Check for an existing skill
 
-Look for `.agents/skills/**/*-mode/SKILL.md`, `~/.gemini/config/skills/*-mode/SKILL.md`, and `~/.agents/skills/*-mode/SKILL.md` matching the user's handle. Mode skills typically live at `.agents/skills/<handle>-mode/SKILL.md` (or in a category directory `.agents/skills/<handle>/<handle>-mode/SKILL.md` registered in `.agents/skills.json`). If one exists, confirm intent with `ask_question` (unless they already said "update my skill" or similar):
+Look for `.agents/skills/**/*-mode/SKILL.md` and `~/.gemini/config/skills/*-mode/SKILL.md` matching the user's handle. Also look in `~/.gemini/antigravity-cli/skills/` and `~/.gemini/skills/`, which the CLI loads and the App does not. Those two are search-only. Do not write a new mode skill there if it should also load in the App. Mode skills typically live at `.agents/skills/<handle>-mode/SKILL.md` (or in a category directory `.agents/skills/<handle>/<handle>-mode/SKILL.md` registered in `.agents/skills.json`). If one exists, confirm intent with `ask_question` (unless they already said "update my skill" or similar):
 
 - Update the existing skill (default for repeat runs)
 - Start fresh (rare, ask why before doing it)
